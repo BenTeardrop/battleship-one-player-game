@@ -46,6 +46,15 @@ def players_choice():
         return players_choice()
 
 
+def computers_choice():
+    """
+    computers choice of coordinates to hit the players ship
+    """
+    global board
+    comp_coordinates = generate_random_coordinate()
+    print(f'comps Shot :{comp_coordinates}')
+    return comp_coordinates
+
 
 print('BATTLESHIP')
 print_board(board)
@@ -54,3 +63,4 @@ print_board(computer_board)
 
 
 players_choice()
+computers_choice()
