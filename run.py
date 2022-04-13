@@ -3,7 +3,8 @@ import random
 
 board = [('0') * 5 for x in range(5)]
 computer_board = [('0') * 5 for x in range(5)]
-
+your_ships_coords = []
+computer_ships_coords = []
 
 def print_board(board):
     """
@@ -56,11 +57,24 @@ def computers_choice():
     return comp_coordinates
 
 
+def generate_ship_coordinates():
+    """
+    Generates coordinates for the ships
+    """
+    coordinates_list = []
+    for x in range(0,5):
+        ship_coordinates = generate_random_coordinate()
+        coordinates_list.append(ship_coordinates)
+    print(f'Ship coordinates: {coordinates_list}')
+    return coordinates_list
+
+
+
 print('BATTLESHIP')
 print_board(board)
 print_board(computer_board)
 
 
-
+generate_ship_coordinates()
 players_choice()
 computers_choice()
