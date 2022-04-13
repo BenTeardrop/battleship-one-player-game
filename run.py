@@ -106,7 +106,7 @@ def start_game():
             print("Computer Ship Down!")
         elif players_shot not in computer_ships_coords:
             print("You miss!")
-        elif your_score == 5 :
+        elif your_score == 5:
             print('You Win!')
 
          # Checks for computer
@@ -131,10 +131,10 @@ def main():
     """
     global computer_ships_coords, your_ships_coords
     print('BATTLESHIP\nrules: choose coordinate from 1 to 5 to hit you oponent\n the first to hit the 5 ships wins')
-    # print('Printing comp ship coords')
     computer_ships_coords = generate_ship_coordinates()
-    # print('Printing my ship coords')
+    print(f'Printing comp ship coords: {computer_ships_coords}')
     your_ships_coords = generate_ship_coordinates()
+    print(f'Printing my ship coords: {your_ships_coords}')
     mark_board_with_ship_coordinates(your_ships_coords)
     print_board(board)
     print_board(computer_board)
