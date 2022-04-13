@@ -26,9 +26,31 @@ def generate_random_coordinate():
     column = random.randint(1,5)
     return (row, column)
 
+def players_choice():
+    """
+    player choice of row and column
+    and making sure the player doesn't choose 
+    a coordinate above 5 
+    """
+    global computer_board
+    try:
+        row_choice = int(input('Choose your row: '))
+        column_choice = int(input('Choose your column: '))
+        coordinates = row_choice, column_choice
+        if row_choice and column_choice > 5:
+            raise ValueError('stay below 5')
+        print(f'your shot:{coordinates}')
+        return coordinates
+    except ValueError as e:
+        print(e)
+        return players_choice()
 
 
 
 print('BATTLESHIP')
 print_board(board)
 print_board(computer_board)
+
+
+
+players_choice()
