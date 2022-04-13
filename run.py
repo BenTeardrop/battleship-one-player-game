@@ -1,3 +1,6 @@
+import random
+
+
 board = [('0') * 5 for x in range(5)]
 computer_board = [('0') * 5 for x in range(5)]
 
@@ -12,6 +15,16 @@ def print_board(board):
     for row in board:
         print(" ".join(row))
     print ('---------')
+
+
+def generate_random_coordinate():
+    """
+    Generates 2 random coordinates integers
+    1 for row and 1 for column
+    """
+    row = random.randint(1,5)
+    column = random.randint(1,5)
+    return (row, column)
 
 
 
