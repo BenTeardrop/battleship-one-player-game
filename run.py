@@ -102,6 +102,10 @@ def mark_board_with_hits(board, hit_coordinate):
 
 
 def has_already_been_hit(board, hit_coordinate):
+    """
+    stops the player from hitting the same
+    place on the board twice
+    """
     row, column = hit_coordinate
     if board[row-1][column-1] == 'x':
         return True
@@ -125,12 +129,12 @@ def restart_game():
 
 rules:
 
-- Choose coordinate from 1 to 5 to hit your
+- Choose coordinates from 1 to 5 to hit your
   opponents ships.
 - The first to hit the 5 ships wins.
 - Your board is the top one
-- The computers board is at the bottom
 - Your ships are marked with an '&'
+- The computers board is at the bottom
 - Hits are marked win an 'x'
     ''')
     computer_ships_coords = generate_ship_coordinates()
@@ -226,7 +230,7 @@ def main():
 
 rules:
 
-- Choose coordinate from 1 to 5 to hit your
+- Choose coordinates from 1 to 5 to hit your
   opponents ships.
 - The first to hit the 5 ships wins.
 - Your board is the top one
@@ -235,9 +239,9 @@ rules:
 - Hits are marked win an 'x'
     ''')
     computer_ships_coords = generate_ship_coordinates()
-    print(f'Printing comp ship coords: {computer_ships_coords}')
+    # print(f'Printing comp ship coords: {computer_ships_coords}')
     your_ships_coords = generate_ship_coordinates()
-    print(f'Printing my ship coords: {your_ships_coords}')
+    # print(f'Printing my ship coords: {your_ships_coords}')
     mark_board_with_ship_coordinates(your_ships_coords)
     print_board(board)
     print_board(computer_board)
