@@ -100,6 +100,41 @@ def has_already_been_hit(board, hit_coordinate):
         return True
     return False
 
+
+
+def restart_game():
+    """
+    Restarts the game
+    """
+    global board, computer_board, your_ships_coords, computer_ships_coords
+    board = [["O"] * 5 for x in range(5)]
+    computer_board = [["O"] * 5 for x in range(5)]
+    your_ships_coords = []
+    computer_ships_coords = []
+    print('BATTLESHIP\nrules: choose coordinate from 1 to 5 to hit you oponent\n the first to hit the 5 ships wins')
+    computer_ships_coords = generate_ship_coordinates()
+    print(f'Printing comp ship coords: {computer_ships_coords}')
+    your_ships_coords = generate_ship_coordinates()
+    print(f'Printing my ship coords: {your_ships_coords}')
+    mark_board_with_ship_coordinates(your_ships_coords)
+    print_board(board)
+    print_board(computer_board)
+    start_game()
+
+def ask_to_play_again():
+    """
+    Asks the player at the end of the game if they want to 
+    play again or quit the game completely
+    """
+    answer = input('Do you want to play another game y/n? ')
+    if answer == "y":
+        restart_game()
+    elif answer == "n":
+        print("Peace")
+    
+
+
+
 def start_game():
     """
     Starts the game between the player and the computer
@@ -140,6 +175,8 @@ def start_game():
             print('You Win!')
         elif comp_score == 5 :
             print('Computer Wins!')
+    
+    ask_to_play_again()
 
 
 
