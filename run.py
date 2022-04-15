@@ -15,6 +15,7 @@ def print_board(board):
     print("----------")
     for row in board:
         print(" ".join(row))
+    print("----------")
 
 def generate_random_coordinate():
     """
@@ -28,7 +29,8 @@ def generate_random_coordinate():
 def players_choice():
     """
     player choice of row and column
-
+    raise a ValueError if the number chosen is 
+    out of range
     """
     global computer_board
     try:
@@ -36,7 +38,7 @@ def players_choice():
         column_choice = int(input('Choose your column: '))
         coordinates = row_choice, column_choice
         if row_choice and column_choice > 5:
-            raise ValueError('stay below 5')
+            raise ValueError('Choose a coordinate from 1 to 5')
         # print(f'your shot:{coordinates}')
         mark_board_with_hits(computer_board, coordinates)
         return coordinates
@@ -50,6 +52,8 @@ def computers_choice():
     """
     global board
     comp_coordinates = generate_random_coordinate()
+    if has_already_been_hit(board, comp_coordinates):
+        return computers_choice()
     mark_board_with_hits(board, comp_coordinates)
     # print(f'comps Shot :{comp_coordinates}')
     return comp_coordinates
@@ -82,8 +86,18 @@ def mark_board_with_hits(board, hit_coordinate):
     marks players board with computers hits
     """
     row, column = hit_coordinate
-
     board[row-1][column-1] = 'x'
+    
+def no_double_hits(board, hit_coordinate):
+    row, column = hit_coordinate
+    if board[row-1][column-1] == 'x':
+        print('you already hit it')
+
+def has_already_been_hit(board, hit_coordinate):
+    row, column = hit_coordinate
+    if board[row-1][column-1] == 'x':
+        return True
+    return False
 
 def start_game():
     """
@@ -94,15 +108,14 @@ def start_game():
     global your_ships_coords
     your_score = 0
     comp_score = 0
-    while your_score < 5 or comp_score < 5:
+    while your_score < 5 and comp_score < 5:
         players_shot = players_choice()
         computer_shot = computers_choice()
-
+        # row, column = hit_coordinate
 
         # Checks for player
         if players_shot in computer_ships_coords:
             your_score += 1
-
             print("Computer Ship Down!")
         elif players_shot not in computer_ships_coords:
             print("You miss!")
