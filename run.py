@@ -41,7 +41,7 @@ def players_choice():
             raise ValueError('Choose a coordinate from 1 to 5')
 
         if has_already_been_hit(computer_board, coordinates):
-            raise ValueError("This has already been hit")    
+            raise ValueError("This has already been hit try another coordinate")    
         # print(f'your shot:{coordinates}')
         mark_board_with_hits(computer_board, coordinates)
         return coordinates
@@ -120,7 +120,7 @@ def start_game():
             your_score += 1
             print("Computer Ship Down!")
         elif players_shot not in computer_ships_coords:
-            print("You miss!")
+            print("You missed!")
     
 
          # Checks for computer
@@ -128,7 +128,7 @@ def start_game():
             comp_score += 1
             print("Your Ship Down!")
         elif computer_shot not in your_ships_coords:
-            print("Comp miss!")
+            print("Players Ship missed!")
         
 
         print_board(board)
@@ -139,7 +139,7 @@ def start_game():
         if your_score == 5:
             print('You Win!')
         elif comp_score == 5 :
-            print('Comp Win!')
+            print('Computer Wins!')
 
 
 
