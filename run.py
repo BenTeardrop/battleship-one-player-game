@@ -92,16 +92,13 @@ def mark_board_with_ship_coordinates(coordinates_list):
 def mark_board_with_hits(board, hit_coordinate):
     """
     marks players and computers board with hits with a "x"
-    and if the players boat is hit turns into '-'
+    and if the players boat is hit turns into '*'
     """
     row, column = hit_coordinate
     if board[row-1][column-1] == '&':
-        board[row-1][column-1] = '-'
+        board[row-1][column-1] = '*'
     else:
         board[row-1][column-1] = 'x'
-
-
-    
 
 
 def has_already_been_hit(board, hit_coordinate):
