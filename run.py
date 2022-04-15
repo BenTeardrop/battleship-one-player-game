@@ -113,7 +113,23 @@ def restart_game():
     computer_board = [["O"] * 5 for x in range(5)]
     your_ships_coords = []
     computer_ships_coords = []
-    print('BATTLESHIP\nrules: choose coordinate from 1 to 5 to hit you oponent\nthe first to hit the 5 ships wins')
+    print('''
+    
+███████████████████████████████████████████████████████████████
+█▄─▄─▀██▀▄─██─▄─▄─█─▄─▄─█▄─▄███▄─▄▄─█─▄▄▄▄█─█─█▄─▄█▄─▄▄─█─▄▄▄▄█
+██─▄─▀██─▀─████─█████─████─██▀██─▄█▀█▄▄▄▄─█─▄─██─███─▄▄▄█▄▄▄▄─█
+▀▄▄▄▄▀▀▄▄▀▄▄▀▀▄▄▄▀▀▀▄▄▄▀▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀
+
+rules:
+
+- Choose coordinate from 1 to 5 to hit your
+  opponents ships.
+- The first to hit the 5 ships wins.
+- Your board is the top one
+- The computers board is at the bottom
+- Your ships are marked with an '@'
+- Hits are marked win an 'x'
+    ''')
     computer_ships_coords = generate_ship_coordinates()
     print(f'Printing comp ship coords: {computer_ships_coords}')
     your_ships_coords = generate_ship_coordinates()
@@ -202,14 +218,14 @@ def main():
 ██─▄─▀██─▀─████─█████─████─██▀██─▄█▀█▄▄▄▄─█─▄─██─███─▄▄▄█▄▄▄▄─█
 ▀▄▄▄▄▀▀▄▄▀▄▄▀▀▄▄▄▀▀▀▄▄▄▀▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀
 
-rules: 
+rules:
 
-- Choose coordinate from 1 to 5 to hit your 
+- Choose coordinate from 1 to 5 to hit your
   opponents ships.
 - The first to hit the 5 ships wins.
-- Your board is the top one 
-- The computers board is at the bottom
+- Your board is the top one
 - Your ships are marked with an '@'
+- The computers board is at the bottom
 - Hits are marked win an 'x'
     ''')
     computer_ships_coords = generate_ship_coordinates()
