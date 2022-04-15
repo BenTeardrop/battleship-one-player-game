@@ -39,6 +39,9 @@ def players_choice():
         coordinates = row_choice, column_choice
         if row_choice and column_choice > 5:
             raise ValueError('Choose a coordinate from 1 to 5')
+
+        if has_already_been_hit(computer_board, coordinates):
+            raise ValueError("This has already been hit")    
         # print(f'your shot:{coordinates}')
         mark_board_with_hits(computer_board, coordinates)
         return coordinates
