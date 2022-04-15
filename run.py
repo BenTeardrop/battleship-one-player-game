@@ -63,12 +63,14 @@ def computers_choice():
 
 def generate_ship_coordinates():
     """
-    Generates coordinates for players ships postions
+    Generates coordinates for players ships positions
+    and avoid repetitions 
     """
     coordinates_list = []
-    for x in range(0,5):
+    while len(coordinates_list) < 5:
         ship_coordinates = generate_random_coordinate()
-        coordinates_list.append(ship_coordinates)
+        if ship_coordinates not in coordinates_list:
+            coordinates_list.append(ship_coordinates)
     # print(f'Ship coordinates: {coordinates_list}')
     return coordinates_list
 
