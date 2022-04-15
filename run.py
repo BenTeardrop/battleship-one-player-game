@@ -88,15 +88,11 @@ def mark_board_with_ship_coordinates(coordinates_list):
 
 def mark_board_with_hits(board, hit_coordinate):
     """
-    marks players board with computers hits
+    marks players and computers board with hits with a "x"
     """
     row, column = hit_coordinate
     board[row-1][column-1] = 'x'
     
-def no_double_hits(board, hit_coordinate):
-    row, column = hit_coordinate
-    if board[row-1][column-1] == 'x':
-        print('you already hit it')
 
 def has_already_been_hit(board, hit_coordinate):
     row, column = hit_coordinate
@@ -107,6 +103,7 @@ def has_already_been_hit(board, hit_coordinate):
 def start_game():
     """
     Starts the game between the player and the computer
+    keep the game going until 5 ships have been hit
     """
 
     global computer_ships_coords
@@ -124,8 +121,7 @@ def start_game():
             print("Computer Ship Down!")
         elif players_shot not in computer_ships_coords:
             print("You miss!")
-        elif your_score == 5:
-            print('You Win!')
+    
 
          # Checks for computer
         if computer_shot in your_ships_coords:
@@ -133,13 +129,17 @@ def start_game():
             print("Your Ship Down!")
         elif computer_shot not in your_ships_coords:
             print("Comp miss!")
-        elif comp_score == 5 :
-            print('Comp Win!')
+        
 
         print_board(board)
         print_board(computer_board)
         print(f'Your score:{your_score}')
         print(f'Comp score:{comp_score}')
+
+        if your_score == 5:
+            print('You Win!')
+        elif comp_score == 5 :
+            print('Comp Win!')
 
 
 
