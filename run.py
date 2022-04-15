@@ -86,7 +86,7 @@ def mark_board_with_ship_coordinates(coordinates_list):
     global board
     for coordinate in coordinates_list:
         row, column = coordinate
-        board[row-1][column-1] = '@'
+        board[row-1][column-1] = '&'
 
 
 def mark_board_with_hits(board, hit_coordinate):
@@ -126,7 +126,7 @@ rules:
 - The first to hit the 5 ships wins.
 - Your board is the top one
 - The computers board is at the bottom
-- Your ships are marked with an '@'
+- Your ships are marked with an '&'
 - Hits are marked win an 'x'
     ''')
     computer_ships_coords = generate_ship_coordinates()
@@ -221,7 +221,7 @@ rules:
   opponents ships.
 - The first to hit the 5 ships wins.
 - Your board is the top one
-- Your ships are marked with an '@'
+- Your ships are marked with an '&'
 - The computers board is at the bottom
 - Hits are marked win an 'x'
     ''')
