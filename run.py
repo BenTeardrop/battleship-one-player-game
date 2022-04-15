@@ -134,9 +134,9 @@ rules:
 - Hits are marked win an 'x'
     ''')
     computer_ships_coords = generate_ship_coordinates()
-    print(f'Printing comp ship coords: {computer_ships_coords}')
+    # print(f'Printing comp ship coords: {computer_ships_coords}')
     your_ships_coords = generate_ship_coordinates()
-    print(f'Printing my ship coords: {your_ships_coords}')
+    # print(f'Printing my ship coords: {your_ships_coords}')
     mark_board_with_ship_coordinates(your_ships_coords)
     print_board(board)
     print_board(computer_board)
@@ -151,7 +151,7 @@ def ask_to_play_again():
     answer = input('Do you want to play another game y/n? ')
     if answer == "y":
         restart_game()
-    else:
+    elif answer == "n":
         print('''
 ██████╗░███████╗░█████╗░░█████╗░███████╗
 ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝
@@ -160,6 +160,8 @@ def ask_to_play_again():
 ██║░░░░░███████╗██║░░██║╚█████╔╝███████╗
 ╚═╝░░░░░╚══════╝╚═╝░░╚═╝░╚════╝░╚══════╝
 ''')
+    else:
+        ask_to_play_again()
 
 
 def start_game():
