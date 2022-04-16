@@ -6,12 +6,12 @@
 Battleship one is a python terminal game, which run the code institute mock terminal on heroku.
 the game is one player against the computer. Each has got 5 ships to hit using coordinates.
 
-Here is the live version on my project.
+[Here is the live version on my project.](https://battleships-one.herokuapp.com/)
 
 ![game on different screens](assets/photos/Battleship-main.png)
 
 ## How to play:
-Battleship one is based on the classic Battleship game see on Wikipedia.
+Battleship one is based on the classic Battleship game see on [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game)).
 In this version when the game start you have two 5x5 boards
 one on top with your ships marked with a '&' and are ramdomly generated
 and the computers board at the bottom with the hidden ships.
@@ -65,3 +65,48 @@ the hits are marked with and 'x' and the players sunk ships are marked with an '
 
 ![computer wins](assets/photos/start-again%3F-no-peace.png)
 ![player wins](assets/photos/you%20win.png)
+
+
+### future features
+  * mark computer ship hits with a '*'
+  * introduce bigger ships
+
+
+## Data model
+
+## Testing
+
+I have manually tested this project by doing the following:
+
+* Passed the code throught a PEP8 linter and confirmed there are no problems
+* Tested with ivalid inputs out of range and double hits.
+* Tested in may local terminal and the Code Institute Heroku Terminal
+
+### bugs 
+
+#### solved bugs
+* on the players choice i change comparison operator from 'and' to 'or' cause the two had to be had of range but now if either is out range it prompts the error message.
+
+#### no bugs remaining
+
+### Validator testing
+
+* PEP8
+    * No errors were returned
+
+## Deployment
+
+This project was deployed using Code Insitute's mock terminal for Heroku
+
+* Steps for deployment:
+    * Fork or clone this repository
+    * create a new Heroku App
+    * Set the buildback to python and NOdejs in that order 
+    * Link the Heroku App to the repository
+    * Click on Deploy
+
+## Credits 
+
+* Code Institute for the deployment terminal
+* wikipedia for the battleship game details
+* [Fsymbols](https://fsymbols.com/text-art/) for the pixels texts art
