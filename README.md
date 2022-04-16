@@ -8,7 +8,7 @@ the game is one player against the computer. Each has got 5 ships to hit using c
 
 Here is the live version on my project.
 
-![game on different screens](assets/photos/)
+![game on different screens](assets/photos/Battleship-main.png)
 
 ## How to play:
 Battleship one is based on the classic Battleship game see on Wikipedia.
@@ -22,38 +22,46 @@ the hits are marked with and 'x' and the players sunk ships are marked with an '
 ## Features
 
 ### Existing features
+* logo & rules
+    * a pixelised logo with the rules right under at the start of the game
 
- * Random board generation
-   * Players ships are randomly placed on the board
-   * computers ships are ramdomly generated but hidden from the player
-   *
+![boards title and rules](assets/photos/title-rules.png)
+* Random board generation
+    * Players ships are randomly placed on the board
+    * computers ships are ramdomly generated but hidden from the player
 
-![boards screenshot](assets/photos/)
+![boards screenshot](assets/photos/two-boards.png)
 
- * Player is asked to enter a row number
- * Player is asked to enter a column number
- 
+* Player is asked to enter a row number
+* Player is asked to enter a column number
+* you are prompted with a "you missed!" message when you miss the computers ships
+* you are prompted with a "your ship down" message when the computer hits your ship 
+   and your boat '&' turn into '*'
+* the your score and comp score appears after each turn.
+* the board is marked with a 'x' where it has been hit
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![row and column inputs](assets/photos/miss%26score.png)
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* Input validation error if the player chooses a row or and column over 5.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+![stay between 1 and 5](assets/photos/stay-between-one-%26-five.png)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* prompt a message if the player hits a space already hit
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+![already hit screenshot](assets/photos/already-hit.png)
 
-Connect your GitHub repository and deploy as normal.
+* hits
+  * board marked with a 'x' where there is a hit.
+  * board marked with a '*' where the player boat got hit.
 
-## Constraints
+![different hits](assets/photos/ship-down-hits.png)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* End of the game
+  * the computer wins
+  * the player wins
+  * you are then asked if you want to play again with a y/n answer
+    if y the game starts again or if n a peace message apear and the game quits.
 
------
-Happy coding!
+![computer wins](assets/photos/start-again%3F-no-peace.png)
+![player wins](assets/photos/you%20win.png)
