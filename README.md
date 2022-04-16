@@ -4,7 +4,7 @@
 # Battleship One
 
 Battleship one is a python terminal game, which run the code institute mock terminal on heroku.
-the game is one player against the computer. Each has got 5 ships to hit using coordinates.
+the game is one player against the computer. Each has got 5 ships and and you hit your opponent using coordinates.
 
 [Here is the live version on my project.](https://battleships-one.herokuapp.com/)
 
@@ -42,6 +42,9 @@ the hits are marked with and 'x' and the players sunk ships are marked with an '
 
 ![row and column inputs](assets/photos/miss%26score.png)
 
+* Prompt "computer ship down!" when the player hits a computer ship
+
+![computer ship down](assets/photos/comp-ship-down.png)
 
 * Input validation error if the player chooses a row or and column over 5.
 
@@ -74,6 +77,9 @@ the hits are marked with and 'x' and the players sunk ships are marked with an '
 
 ## Data model
 
+i used functions argument to call different variables as well as using the global keyword 
+to be able to modify outside the current scope.
+
 ## Testing
 
 I have manually tested this project by doing the following:
@@ -85,7 +91,7 @@ I have manually tested this project by doing the following:
 ### bugs 
 
 #### solved bugs
-* on the players choice i change comparison operator from 'and' to 'or' cause the two had to be had of range but now if either is out range it prompts the error message.
+* on the players choice i changed comparison operator from 'and' to 'or' cause the two had to be had of range but now if either is out range it prompts the error message.
 
 #### no bugs remaining
 
