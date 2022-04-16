@@ -35,8 +35,8 @@ def players_choice():
     """
     global computer_board
     try:
-        row_choice = int(input('Choose your row: '))
-        column_choice = int(input('Choose your column: '))
+        row_choice = int(input('Choose your row:\n'))
+        column_choice = int(input('Choose your column:\n'))
         coordinates = row_choice, column_choice
         if row_choice > 5 or column_choice > 5:
             raise ValueError('Choose a coordinate from 1 to 5')
@@ -152,7 +152,7 @@ def ask_to_play_again():
     Asks the player at the end of the game if they want to
     play again or quit the game completely
     """
-    answer = input('Do you want to play another game y/n? ')
+    answer = input('Do you want to play another game y/n?\n')
     if answer == "y":
         restart_game()
     elif answer == "n":
