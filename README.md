@@ -1,16 +1,38 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Battleship classic logo](assets/photos/battleships%20logo.webp)
 
-██████╗░░█████╗░████████╗████████╗██╗░░░░░███████╗░██████╗██╗░░██╗██╗██████╗░░██████╗
-██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║░░░░░██╔════╝██╔════╝██║░░██║██║██╔══██╗██╔════╝
-██████╦╝███████║░░░██║░░░░░░██║░░░██║░░░░░█████╗░░╚█████╗░███████║██║██████╔╝╚█████╗░
-██╔══██╗██╔══██║░░░██║░░░░░░██║░░░██║░░░░░██╔══╝░░░╚═══██╗██╔══██║██║██╔═══╝░░╚═══██╗
-██████╦╝██║░░██║░░░██║░░░░░░██║░░░███████╗███████╗██████╔╝██║░░██║██║██║░░░░░██████╔╝
-╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░╚══════╝╚══════╝╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═════╝░
-Welcome Ben Jim,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Battleship One
 
-## Reminders
+Battleship one is a python terminal game, which run the code institute mock terminal on heroku.
+the game is one player against the computer. Each has got 5 ships to hit using coordinates.
+
+Here is the live version on my project.
+
+![game on different screens](assets/photos/)
+
+## How to play:
+Battleship one is based on the classic Battleship game see on Wikipedia.
+In this version when the game start you have two 5x5 boards
+one on top with your ships marked with a '&' and are ramdomly generated
+and the computers board at the bottom with the hidden ships.
+the players is prompted to give coordinates, row first an column second
+both having to be between 1 and 5.
+the hits are marked with and 'x' and the players sunk ships are marked with an '*'.
+
+## Features
+
+### Existing features
+
+ * Random board generation
+   * Players ships are randomly placed on the board
+   * computers ships are ramdomly generated but hidden from the player
+   *
+
+![boards screenshot](assets/photos/)
+
+ * Player is asked to enter a row number
+ * Player is asked to enter a column number
+ 
 
 * Your code must be placed in the `run.py` file
 * Your dependencies must be placed in the `requirements.txt` file
